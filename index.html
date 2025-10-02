@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Céracotta — Bientôt</title>
+  <style>
+    :root{
+      --beige:#f4f1ec;
+      --beige-2:#efeae4;
+      --bordeaux:#7f0000;
+      --ink:#463a36;
+      --line:#e4d9cf;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      min-height:100svh;
+      background:
+        radial-gradient(1200px 700px at 70% -10%, var(--beige-2), var(--beige));
+      font-family: ui-serif, "Playfair Display", Georgia, serif;
+      color: var(--ink);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+      display:grid;
+      grid-template-rows: 1fr auto;
+    }
+
+    .hero{
+      display:grid;
+      place-items:center;
+      padding: clamp(28px, 6vw, 64px) 20px 0;
+      text-align:center;
+    }
+    .stack{
+      display:grid;
+      gap: clamp(14px,2.8vw,22px);
+      justify-items:center;
+      animation: rise .6s ease-out both;
+    }
+    @keyframes rise{from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:translateY(0)}}
+
+    .logo{
+      width:min(210px, 65vw);
+      height:auto;
+      filter: drop-shadow(0 8px 24px rgba(127,0,0,0.08));
+      transform: translateZ(0);
+    }
+
+    .slogan{
+      font-size: clamp(18px, 2.8vw, 28px);
+      color: var(--bordeaux);
+      letter-spacing:.2px;
+      line-height:1.35;
+      padding-inline: 10px;
+    }
+
+    .divider{
+      width: min(160px, 40vw);
+      height: 1.5px;
+      background: linear-gradient(90deg, transparent, var(--line), transparent);
+      margin-top: 4px;
+    }
+
+    .footer-bar{
+      position: sticky;
+      bottom: 0;
+      display:flex;
+      justify-content:center;
+      padding: clamp(18px, 3.5vw, 28px) 16px;
+    }
+    .pill{
+      display:flex;
+      gap: clamp(18px, 3vw, 28px);
+      align-items:center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(127,0,0,0.18);
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 10px 28px rgba(127,0,0,0.10);
+    }
+    .pill a{
+      display:inline-flex;
+      width:40px; height:40px;
+      align-items:center; justify-content:center;
+      border-radius: 12px;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .pill a:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(127,0,0,0.18);
+      background: rgba(127,0,0,0.06);
+    }
+    .pill img{
+      width:26px; height:26px; object-fit:contain;
+      display:block;
+      filter: drop-shadow(0 1px 0 rgba(0,0,0,0.05));
+    }
+
+
+    a:focus-visible{ outline:3px solid rgba(127,0,0,.28); outline-offset:4px; border-radius:14px }
+
+    @media (max-width:420px){
+      .pill{ gap:16px; padding:8px 12px }
+      .pill a{ width:36px; height:36px }
+      .pill img{ width:22px; height:22px }
+    }
+  </style>
+</head>
+<body>
+  <main class="hero">
+    <div class="stack">
+
+      <img src="logo.png" alt="Céracotta — Tout un univers" class="logo" />
+
+      <p class="slogan">Un univers raffiné en céramique, bientôt entre vos mains</p>
+      <div class="divider" aria-hidden="true"></div>
+    </div>
+  </main>
+
+  <div class="footer-bar">
+    <div class="pill" role="navigation" aria-label="Réseaux sociaux">
+      <a href="https://www.instagram.com/ceracottaa/" target="_blank" rel="noopener" aria-label="Instagram Céracotta">
+        <img src="instagram.webp" alt="Instagram" />
+      </a>
+      <a href="https://www.tiktok.com/@ceracottaa" target="_blank" rel="noopener" aria-label="TikTok Céracotta">
+        <img src="tiktok.webp" alt="TikTok" />
+      </a>
+    </div>
+  </div>
+</body>
+</html>
